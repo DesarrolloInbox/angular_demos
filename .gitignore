@@ -1,28 +1,28 @@
-# Angular specific
-/dist/
-/out-tsc/
-/tmp/
-/coverage/
-/e2e/test-output/
-/.angular/
-.angular/
+# =========================
+# Ignorar configuraciones locales
+# =========================
+.DS_Store
+Thumbs.db
 
-# Node modules and dependency files
-/node_modules/
-/package-lock.json
-/yarn.lock
+# =========================
+# Node.js / npm (Carpeta /back)
+# =========================
+back/node_modules/
+back/npm-debug.log*
+back/yarn-debug.log*
+back/yarn-error.log*
+back/package-lock.json
+back/pnpm-lock.yaml
 
-# Environment files
-/.env
+# =========================
+# Angular / CLI (Carpeta /front)
+# =========================
+heroeFront/node_modules/
+heroeFront/dist/
+heroeFront/out-tsc/
+heroeFront/.angular/
+heroeFront/package-lock.json
+heroeFront/pnpm-lock.yaml
 
-# Angular CLI and build artefacts
-/.angular-cli.json
-/.ng/
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Archivos de entorno específicos (útil si los configuras por separado)
+# heroeFront/src/environments/environment.ts

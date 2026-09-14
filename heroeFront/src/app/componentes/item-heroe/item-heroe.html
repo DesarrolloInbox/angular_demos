@@ -1,0 +1,51 @@
+<article class="card">
+  <div class="card-image">
+    <img [src]="heroe().imagen" [alt]="heroe().nombre">
+  </div>
+  <div class="card-content">
+    <div class="stat-row">
+      <span class="stat-label">Velocidad</span>
+      <div class="stat-controls">
+        <button [disabled]="heroe().poderes.velocidad === 0" (click)="decrementarPoder('velocidad')">-</button>
+        <span class="stat-value">{{ heroe().poderes.velocidad }}</span>
+        <button [disabled]="heroe().poderes.velocidad === 100" (click)="incrementarPoder('velocidad')">+</button>
+      </div>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Inteligencia</span>
+      <div class="stat-controls">
+        <button [disabled]="heroe().poderes.inteligencia === 0" (click)="decrementarPoder('inteligencia')">-</button>
+        <span class="stat-value">{{ heroe().poderes.inteligencia }}</span>
+        <button [disabled]="heroe().poderes.inteligencia === 100" (click)="incrementarPoder('inteligencia')">+</button>
+      </div>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Fuerza</span>
+      <div class="stat-controls">
+        <button [disabled]="heroe().poderes.fuerza === 0" (click)="decrementarPoder('fuerza')">-</button>
+        <span class="stat-value">{{ heroe().poderes.fuerza }}</span>
+        <button [disabled]="heroe().poderes.fuerza === 100" (click)="incrementarPoder('fuerza')">+</button>
+      </div>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Resistencia</span>
+      <div class="stat-controls">
+        <button [disabled]="heroe().poderes.resistencia === 0" (click)="decrementarPoder('resistencia')">-</button>
+        <span class="stat-value">{{ heroe().poderes.resistencia }}</span>
+        <button [disabled]="heroe().poderes.resistencia === 100" (click)="incrementarPoder('resistencia')">+</button>
+      </div>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">combate</span>
+      <div class="stat-controls">
+        <button [disabled]="heroe().poderes.combate === 0" (click)="decrementarPoder('combate')">-</button>
+        <span class="stat-value">{{ heroe().poderes.combate }}</span>
+        <button [disabled]="heroe().poderes.combate === 100" (click)="incrementarPoder('combate')">+</button>
+      </div>
+    </div>
+  </div>
+  <footer class="card-footer" [class.footer-villain]="esVillano()">
+    <h2>{{ heroe().nombre }}</h2>
+    <span>{{ esVillano() ? 'Villano' : 'Héroe' }}</span>
+  </footer>
+</article>
