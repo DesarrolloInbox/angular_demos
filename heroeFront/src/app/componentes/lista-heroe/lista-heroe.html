@@ -1,3 +1,5 @@
-<app-item-heroe [heroe]="heroes[0]" (cambioDePoder)="onCambioDePoder($event)"></app-item-heroe>
-<app-item-heroe [heroe]="heroes[1]" (cambioDePoder)="onCambioDePoder($event)"></app-item-heroe>
-<app-item-heroe [heroe]="heroes[2]" (cambioDePoder)="onCambioDePoder($event)"></app-item-heroe>
+@for (item of heroes; track $index){
+    <app-item-heroe [heroe]="item" (cambioDePoder)="onCambioDePoder($event)"></app-item-heroe>
+}@empty {
+    No hay elementos
+}

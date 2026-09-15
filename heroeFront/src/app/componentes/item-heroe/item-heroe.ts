@@ -1,8 +1,9 @@
 import { Component, computed, input, output } from '@angular/core';
 import { Heroe, HeroeCambioDePoderes, Poder } from '../../compartido/interfaces/heroeI';
+import { KeyValuePipe, TitleCasePipe } from '@angular/common';
 
 @Component({
-  imports: [],
+  imports: [KeyValuePipe, TitleCasePipe],
   selector: 'app-item-heroe',
   styleUrl: './item-heroe.css',
   templateUrl: './item-heroe.html',
