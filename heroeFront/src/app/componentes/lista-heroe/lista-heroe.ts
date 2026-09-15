@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Heroe } from '../../compartido/interfaces/heroeI';
+import { Heroe, HeroeCambioDePoderes } from '../../compartido/interfaces/heroeI';
 import { ItemHeroe } from '../item-heroe/item-heroe';
 
 @Component({
@@ -49,4 +49,8 @@ export class ListaHeroe {
       bando: 'malo'
     }
   ]
+
+  onCambioDePoder({heroe, poder, valor}: HeroeCambioDePoderes): void {
+    heroe.poderes[poder] += valor
+  }
 }

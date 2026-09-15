@@ -15,3 +15,9 @@ export interface Poderes {
 }
 
 export type Poder = keyof Poderes;
+
+export interface HeroeCambioDePoderes {
+    heroe: Heroe;
+    poder: Poder;
+    valor: number;
+}

@@ -1,5 +1,5 @@
-import { Component, computed, input } from '@angular/core';
-import { Heroe, Poder } from '../../compartido/interfaces/heroeI';
+import { Component, computed, input, output } from '@angular/core';
+import { Heroe, HeroeCambioDePoderes, Poder } from '../../compartido/interfaces/heroeI';
 
 @Component({
   imports: [],
@@ -9,18 +9,23 @@ import { Heroe, Poder } from '../../compartido/interfaces/heroeI';
 })
 export class ItemHeroe {
   heroe = input.required<Heroe>()
+  cambioDePoder = output<HeroeCambioDePoderes>()
 
   esVillano = computed(() => this.heroe().bando === 'malo')
 
   decrementarPoder(poder: Poder) {
-    if (this.heroe().poderes[poder] > 0) {
-      this.heroe().poderes[poder]--;
-    }
+    this.cambioDePoder.emit({
+      heroe: this.heroe(),
+      poder,
+      valor: -1
+    })
   }
 
   incrementarPoder(poder: Poder) {
-    if (this.heroe().poderes[poder] <100) {
-      this.heroe().poderes[poder]++;
-    }
+    this.cambioDePoder.emit({
+      heroe: this.heroe(),
+      poder,
+      valor: 1
+    })
   }
 }
